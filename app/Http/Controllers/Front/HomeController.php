@@ -59,7 +59,7 @@ class HomeController extends BaseController
         $ticket->fill(array_merge($data,$partners[$data['partner_id']]));
         $ticket->save();
 
-        $command = escapeshellcmd('save.py --price='.$ticket->price.' --name='.$ticket->name);
+        $command = escapeshellcmd('save.py --id= '.$ticket->id.' --price='.$ticket->price.' --name='.$ticket->name);
         $output = shell_exec($command);
 
         return $this->success('Билет успешно добавлен');
@@ -127,13 +127,14 @@ class HomeController extends BaseController
 
         $tickets = Ticket::where('verified','=',0)->get();
 
-        $command = escapeshellcmd('verify.py');
-        $output = shell_exec($command);
 
         foreach ($tickets as $ticket)
         {
             $ticket->verified = 1;
             $ticket->save();
+
+            $command = escapeshellcmd('verify.py --id='.$ticket->id);
+            $output = shell_exec($command);
         }
 
         return response()->json([
