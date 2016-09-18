@@ -10,7 +10,8 @@
         "barryvdh/laravel-ide-helper": "^2.2",
         "doctrine/dbal": "^2.5",
         "caouecs/laravel-lang": "~3.0",
-        "bugsnag/bugsnag-laravel": "^2.0"
+        "bugsnag/bugsnag-laravel": "^2.0",
+        "achse/geth-jsonrpc-php-client": "^1.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

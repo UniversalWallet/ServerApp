@@ -4,9 +4,47 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "356339f356895bf3cd82afd7c4ea2ca0",
-    "content-hash": "7a5c7c1f1e2a11dd23c75235f470fa50",
+    "hash": "5bb703f59a9d323c6abc2171336b7fdb",
+    "content-hash": "283e005716f37c214782d1096b79e954",
     "packages": [
+        {
+            "name": "achse/geth-jsonrpc-php-client",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Achse/geth-jsonrpc-php-client.git",
+                "reference": "1fd72fe153a33e12d4a26de76e1b395f04d0ca82"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Achse/geth-jsonrpc-php-client/zipball/1fd72fe153a33e12d4a26de76e1b395f04d0ca82",
+                "reference": "1fd72fe153a33e12d4a26de76e1b395f04d0ca82",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "^6.2",
+                "nette/utils": "2.3.*",
+                "php": ">= 5.6.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "@dev",
+                "nette/tester": "@dev"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "LetsAgree\\GethJsonRpcPhpClient\\": "src/"
+                },
+                "classmap": [
+                    "src/JsonRpc/exceptions.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "time": "2016-04-03 18:02:53"
+        },
         {
             "name": "barryvdh/laravel-ide-helper",
             "version": "v2.2.1",
@@ -951,47 +989,6 @@
             "time": "2014-09-09 13:34:57"
         },
         {
-            "name": "ellisthedev/laravel-5-robots",
-            "version": "0.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/ellisthedev/laravel-5-robots.git",
-                "reference": "03bdd996efcbf38eb6cc06809f2a46bc31e74173"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/ellisthedev/laravel-5-robots/zipball/03bdd996efcbf38eb6cc06809f2a46bc31e74173",
-                "reference": "03bdd996efcbf38eb6cc06809f2a46bc31e74173",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/support": ">=5.0",
-                "php": ">=5.4.0"
-            },
-            "require-dev": {
-                "codeclimate/php-test-reporter": "dev-master",
-                "phpunit/phpunit": "~4.6"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "EllisTheDev\\Robots\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Andrew Ellis",
-                    "email": "awellis89@gmail.com"
-                }
-            ],
-            "description": "Robots.txt Generator for Laravel 5",
-            "time": "2015-04-30 21:39:08"
-        },
-        {
             "name": "guzzlehttp/guzzle",
             "version": "6.2.1",
             "source": {
@@ -1687,6 +1684,61 @@
             "time": "2015-11-04 20:07:17"
         },
         {
+            "name": "nette/utils",
+            "version": "v2.3.10",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nette/utils.git",
+                "reference": "66ceba196e4535ca3bf8f835db50d7e02339fdb0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nette/utils/zipball/66ceba196e4535ca3bf8f835db50d7e02339fdb0",
+                "reference": "66ceba196e4535ca3bf8f835db50d7e02339fdb0",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.1"
+            },
+            "conflict": {
+                "nette/nette": "<2.2"
+            },
+            "require-dev": {
+                "nette/tester": "~1.0"
+            },
+            "suggest": {
+                "ext-gd": "to use Image",
+                "ext-iconv": "to use Strings::webalize() and toAscii()",
+                "ext-intl": "for script transliteration in Strings::webalize() and toAscii()",
+                "ext-mbstring": "to use Strings::lower() etc..."
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause",
+                "GPL-2.0",
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "David Grudl",
+                    "homepage": "https://davidgrudl.com"
+                },
+                {
+                    "name": "Nette Community",
+                    "homepage": "https://nette.org/contributors"
+                }
+            ],
+            "description": "Nette Utility Classes",
+            "homepage": "https://nette.org",
+            "time": "2016-06-17 13:28:41"
+        },
+        {
             "name": "nikic/php-parser",
             "version": "v2.1.0",
             "source": {
@@ -2024,59 +2076,6 @@
                 "uuid"
             ],
             "time": "2016-08-02 18:39:32"
-        },
-        {
-            "name": "rutorika/sortable",
-            "version": "3.2.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/boxfrommars/rutorika-sortable.git",
-                "reference": "8a05447606657d48899f21f14ed3426bd8517afd"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/boxfrommars/rutorika-sortable/zipball/8a05447606657d48899f21f14ed3426bd8517afd",
-                "reference": "8a05447606657d48899f21f14ed3426bd8517afd",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/support": "5.*",
-                "php": ">=5.4.0"
-            },
-            "require-dev": {
-                "orchestra/testbench": "3.*",
-                "phpunit/phpunit": "~4.4"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Rutorika\\Sortable": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Dmitry Groza",
-                    "email": "boxfrommars@gmail.com"
-                }
-            ],
-            "description": "Adds sortable behavior and ordering to Laravel Eloquent models. Grouping and many to many supported.",
-            "keywords": [
-                "eloquent",
-                "laravel",
-                "laravel4",
-                "laravel5",
-                "order",
-                "orderable",
-                "ordering",
-                "sort",
-                "sortable",
-                "sorting"
-            ],
-            "time": "2016-05-09 14:18:19"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -3073,6 +3072,47 @@
             "time": "2015-06-14 21:17:01"
         },
         {
+            "name": "ellisthedev/laravel-5-robots",
+            "version": "0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ellisthedev/laravel-5-robots.git",
+                "reference": "03bdd996efcbf38eb6cc06809f2a46bc31e74173"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ellisthedev/laravel-5-robots/zipball/03bdd996efcbf38eb6cc06809f2a46bc31e74173",
+                "reference": "03bdd996efcbf38eb6cc06809f2a46bc31e74173",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": ">=5.0",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "codeclimate/php-test-reporter": "dev-master",
+                "phpunit/phpunit": "~4.6"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "EllisTheDev\\Robots\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Andrew Ellis",
+                    "email": "awellis89@gmail.com"
+                }
+            ],
+            "description": "Robots.txt Generator for Laravel 5",
+            "time": "2015-04-30 21:39:08"
+        },
+        {
             "name": "fzaninotto/faker",
             "version": "v1.6.0",
             "source": {
@@ -3860,6 +3900,59 @@
                 "xunit"
             ],
             "time": "2016-09-06 16:07:45"
+        },
+        {
+            "name": "rutorika/sortable",
+            "version": "3.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/boxfrommars/rutorika-sortable.git",
+                "reference": "8a05447606657d48899f21f14ed3426bd8517afd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/boxfrommars/rutorika-sortable/zipball/8a05447606657d48899f21f14ed3426bd8517afd",
+                "reference": "8a05447606657d48899f21f14ed3426bd8517afd",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "5.*",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "3.*",
+                "phpunit/phpunit": "~4.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Rutorika\\Sortable": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dmitry Groza",
+                    "email": "boxfrommars@gmail.com"
+                }
+            ],
+            "description": "Adds sortable behavior and ordering to Laravel Eloquent models. Grouping and many to many supported.",
+            "keywords": [
+                "eloquent",
+                "laravel",
+                "laravel4",
+                "laravel5",
+                "order",
+                "orderable",
+                "ordering",
+                "sort",
+                "sortable",
+                "sorting"
+            ],
+            "time": "2016-05-09 14:18:19"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",

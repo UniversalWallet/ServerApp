@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\Front;
 
 use App\Ticket;
+use GuzzleHttp\Client;
 use Illuminate\Http\Request;
+use LetsAgree\GethJsonRpcPhpClient\JsonRpc\GuzzleClient;
+use LetsAgree\GethJsonRpcPhpClient\JsonRpc\GuzzleClientFactory;
 
 class HomeController extends BaseController
 {
@@ -55,6 +58,9 @@ class HomeController extends BaseController
         ];
         $ticket->fill(array_merge($data,$partners[$data['partner_id']]));
         $ticket->save();
+
+        $command = escapeshellcmd('save.py');
+        $output = shell_exec($command);
 
         return $this->success('Билет успешно добавлен');
     }
@@ -120,6 +126,9 @@ class HomeController extends BaseController
     public function verify(Request $request) {
 
         $tickets = Ticket::where('verified','=',0)->get();
+
+        $command = escapeshellcmd('verify.py');
+        $output = shell_exec($command);
 
         foreach ($tickets as $ticket)
         {
