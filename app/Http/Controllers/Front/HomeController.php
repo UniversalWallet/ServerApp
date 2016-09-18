@@ -21,6 +21,7 @@ class HomeController extends BaseController
         $address = $request->input('address');
         return response()->json([
             'data' => [
+                [
                 'type' => 'avia',
                 'time' => '2016-09-29 13:30',
                 'event' => 'MSK - PHU',
@@ -29,6 +30,7 @@ class HomeController extends BaseController
                 'ticket_id' => 'QWER432',
                 'partner_id' => 3,
                 'partner_name' => 'Aeroflot'
+                ]
             ], 'meta' => [
                 ''
             ]

@@ -15,16 +15,17 @@ class CreateTicketsTable extends Migration
     {
         Schema::create('tickets', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('type');
-            $table->morphs('bidder');
-
-            $table->float('price', 10, 2)->unsigned()->default(0);
-
+            $table->string('type')->nullable();
+            $table->string('event')->nullable();
+            $table->string('place')->nullable();
+            $table->string('price')->nullable();
+            $table->string('vendor_id')->nullable();
+            $table->string('partner_id')->nullable();
+            $table->string('partner_name')->nullable();
+            $table->string('price')->nullable();
+            $table->string('scope')->nullable();
+            $table->boolean('verified')->default(0);
             $table->timestamps();
-
-            $table->foreign('lot_id')
-                ->references('id')->on('lots')
-                ->onDelete('cascade');
         });
     }
 
