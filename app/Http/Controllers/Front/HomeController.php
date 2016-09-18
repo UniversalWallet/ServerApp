@@ -61,7 +61,7 @@ class HomeController extends BaseController
 
     public function listOfTickets(Request $request)
     {
-        $tickets = $request->has('address') ? Ticket::where('address','=', $request->input('address'))->get() : Ticket::all();
+        $tickets = $request->has('address') ? Ticket::where('address','=', $request->input('address'))->where('verified',1)->get() : Ticket::all();
         $address = $request->input('address');
 
         $responseArray = [];
@@ -118,6 +118,15 @@ class HomeController extends BaseController
     }
 
     public function verify(Request $request) {
+
+        $tickets = Ticket::where('verified','=',0)->get();
+
+        foreach ($tickets as $ticket)
+        {
+            $ticket->verified = 1;
+            $ticket->save();
+        }
+
         return response()->json([
             'data' => [
                 'verified' => 1,
