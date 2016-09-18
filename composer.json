@@ -1,4 +1,4 @@
-.gitignore{
+{
     "name": "jufyfamily/billing_backend",
     "description": "The Laravel Framework.",
     "keywords": ["framework", "laravel"],
@@ -9,7 +9,6 @@
         "laravel/framework": "5.3.*",
         "barryvdh/laravel-ide-helper": "^2.2",
         "doctrine/dbal": "^2.5",
-        "ellisthedev/laravel-5-robots": "~0.1.0",
         "caouecs/laravel-lang": "~3.0",
         "bugsnag/bugsnag-laravel": "^2.0",
     },
