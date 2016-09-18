@@ -11,7 +11,7 @@
                 <div class="row">
                     <div class="col-lg-8 col-md-7 col-sm-6">
                         <h1>Universal Wallet</h1>
-                        <p class="lead">Реест билетов на платформе Ethereum</p>
+                        <p class="lead">Реестр билетов на платформе Ethereum</p>
                     </div>
                 </div>
             </div>

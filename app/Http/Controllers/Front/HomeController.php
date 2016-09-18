@@ -79,7 +79,7 @@ class HomeController extends BaseController
             $responseArray[] = [
                 'type' => $ticket->type,
                 'time' => $ticket->time_at,
-                'event' => $ticket->name,
+                'event' => $ticket->event,
                 'place' => $ticket->place,
                 'seat' => $ticket->seat,
                 'price' => $ticket->price,
@@ -98,7 +98,7 @@ class HomeController extends BaseController
     }
 
     public function toVerify(Request $request) {
-        
+
         $address = $request->input('address');
 
         $tickets = $request->has('address') ? Ticket::where('address','=', $request->input('address'))->where('verified',0)->get() : Ticket::where('verified',0)->get();
