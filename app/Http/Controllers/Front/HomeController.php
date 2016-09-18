@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Front;
 
+use App\Ticket;
 use Illuminate\Http\Request;
 
 class HomeController extends BaseController
@@ -18,27 +19,73 @@ class HomeController extends BaseController
 
     public function storeTicketPerform(Request $request)
     {
-        dd($request->input());
+        $data = $request->input();
+
+        $ticket = new Ticket();
+
+        $partners = [
+            '3' => [
+                'type' => 'avia',
+                'partner_id' => 3,
+                'partner_name' => 'Аэрофлот',
+                'scope' => 'full',
+                'verified' => 0,
+            ],
+            '2' => [
+                'type' => 'concert',
+                'partner_id' => 2,
+                'partner_name' => 'Лужники',
+                'scope' => 'full_name',
+                'verified' => 1,
+            ],
+            '1' => [
+                'type' => 'rail',
+                'partner_id' => 1,
+                'partner_name' => 'РЖД',
+                'scope' => 'passport',
+                'verified' => 0,
+            ],
+            '4' => [
+                'type' => 'cinema',
+                'partner_id' => 4,
+                'partner_name' => 'КАРО Фильм',
+                'scope' => 'full_name',
+                'verified' => 1,
+            ]
+        ];
+        $ticket->fill(array_merge($data,$partners[$data['partner_id']]));
+        $ticket->save();
+
+        return $this->success('Билет успешно добавлен');
     }
 
     public function listOfTickets(Request $request)
     {
+        $tickets = $request->has('address') ? Ticket::where('address','=', $request->input('address'))->get() : Ticket::all();
         $address = $request->input('address');
+
+        $responseArray = [];
+
+        foreach ($tickets as $ticket) {
+            /**
+             * @var $ticket Ticket
+             */
+            $responseArray[] = [
+                'type' => $ticket->type,
+                'time' => $ticket->time_at,
+                'event' => $ticket->name,
+                'place' => $ticket->place,
+                'seat' => $ticket->seat,
+                'price' => $ticket->price,
+                'ticket_id' => $ticket->vendor_id,
+                'partner_id' => $ticket->partner_id,
+                'partner_name' => $ticket->partner_name,
+                'image' => public_path('images/aeroflot.png'),
+                'hash' => '0x'.str_random(30)
+            ];
+        }
         return response()->json([
-            'data' => [
-                [
-                    'type' => 'avia',
-                    'time' => '2016-09-29 13:30',
-                    'event' => 'MSK - PHU',
-                    'place' => 'Sheremetevo',
-                    'price' => '13 000 руб.',
-                    'ticket_id' => 'QWER432',
-                    'partner_id' => 3,
-                    'partner_name' => 'Aeroflot',
-                    'image' => public_path('images/aeroflot.png'),
-                    'hash' => '0x3241u3iirwehkfjsdgfjhasgbdfjhb'
-                ]
-            ], 'meta' => [
+            'data' => $responseArray, 'meta' => [
 
             ]
         ]);
@@ -46,13 +93,25 @@ class HomeController extends BaseController
 
     public function toVerify(Request $request) {
         $address = $request->input('address');
+
+        $tickets = $request->has('address') ? Ticket::where('address','=', $request->input('address'))->where('verified',0)->get() : Ticket::where('verified',0)->get();
+
+        $responseArray = [];
+
+        foreach ($tickets as $ticket) {
+            /**
+             * @var $ticket Ticket
+             */
+            $responseArray[] = [
+                'requrest_id' => $ticket->id,
+                'scope' => $ticket->scope,
+                'partner_id' => $ticket->partner_id,
+                'partner_name' => $ticket->partner_name,
+            ];
+        }
+
         return response()->json([
-            'data' => [
-                'requrest_id' => 1,
-                'scope' => 'full',
-                'partner_id' => 3,
-                'partner_name' => 'Aeroflot'
-            ], 'meta' => [
+            'data' => $responseArray, 'meta' => [
 
             ]
         ]);

@@ -5,14 +5,14 @@
     </div>
     <div class="panel-body">
         @include('layouts.partials.form.input-text', [
-            'name' => 'wallet',
+            'name' => 'address',
             'title' => 'Кошелёк',
             'required' => true,
             'value' => old('event_name', isset($item) ? $item->name : ''),
             'placeholder' => 'Введите кошелёк'
         ])
         @include('layouts.partials.form.input-text', [
-            'name' => 'name',
+            'name' => 'event',
             'title' => 'Мероприятие',
             'required' => true,
             'value' => old('event_name', isset($item) ? $item->name : ''),
@@ -40,11 +40,23 @@
            'placeholder' => 'Введите цену'
        ])
         @include('layouts.partials.form.input-text', [
-           'name' => 'price',
+           'name' => 'vendor_id',
            'title' => 'Номер билета',
            'required' => true,
            'value' => old('description', isset($item) ? $item->description : ''),
            'placeholder' => 'Введите номер билета'
+       ])
+
+        @include('layouts.partials.form.select', [
+           'title' => 'Партнёр',
+           'name' => 'partner_id',
+           'selected' => old('prolongation', isset($item) ? $item->prolongation : ''),
+           'options' => [
+               1  => 'РЖД',
+               2 => 'Лужники',
+               3 => 'Аэрофлот',
+               4 => 'КАРО Фильм',
+           ]
        ])
 
         @include('layouts.partials.form.datetime', [
