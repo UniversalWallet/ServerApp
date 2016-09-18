@@ -34,4 +34,28 @@ class HomeController extends BaseController
             ]
         ]);
     }
+
+    public function toVerify(Request $request) {
+        $address = $request->input('address');
+        return response()->json([
+            'data' => [
+                'requrest_id' => 1,
+                'scope' => 'full',
+                'partner_id' => 3,
+                'partner_name' => 'Aeroflot'
+            ], 'meta' => [
+                ''
+            ]
+        ]);
+    }
+
+    public function verify(Request $request) {
+        return response()->json([
+            'data' => [
+                'verified' => 1,
+            ], 'meta' => [
+                ''
+            ]
+        ]);
+    }
 }
