@@ -16,13 +16,13 @@ class CreateTicketsTable extends Migration
         Schema::create('tickets', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('type')->nullable();
+            $table->string('address')->nullable();
             $table->string('event')->nullable();
             $table->string('place')->nullable();
             $table->string('price')->nullable();
             $table->string('vendor_id')->nullable();
             $table->string('partner_id')->nullable();
             $table->string('partner_name')->nullable();
-            $table->string('price')->nullable();
             $table->string('scope')->nullable();
             $table->boolean('verified')->default(0);
             $table->timestamps();
@@ -36,6 +36,6 @@ class CreateTicketsTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('tickets');
     }
 }

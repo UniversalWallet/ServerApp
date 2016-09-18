@@ -16,23 +16,30 @@ class HomeController extends BaseController
         return view('create');
     }
 
+    public function storeTicketPerform(Request $request)
+    {
+        dd($request->input());
+    }
+
     public function listOfTickets(Request $request)
     {
         $address = $request->input('address');
         return response()->json([
             'data' => [
                 [
-                'type' => 'avia',
-                'time' => '2016-09-29 13:30',
-                'event' => 'MSK - PHU',
-                'place' => 'Sheremetevo',
-                'price' => '13 000 руб.',
-                'ticket_id' => 'QWER432',
-                'partner_id' => 3,
-                'partner_name' => 'Aeroflot'
+                    'type' => 'avia',
+                    'time' => '2016-09-29 13:30',
+                    'event' => 'MSK - PHU',
+                    'place' => 'Sheremetevo',
+                    'price' => '13 000 руб.',
+                    'ticket_id' => 'QWER432',
+                    'partner_id' => 3,
+                    'partner_name' => 'Aeroflot',
+                    'image' => public_path('images/aeroflot.png'),
+                    'hash' => '0x3241u3iirwehkfjsdgfjhasgbdfjhb'
                 ]
             ], 'meta' => [
-                ''
+
             ]
         ]);
     }
@@ -46,7 +53,7 @@ class HomeController extends BaseController
                 'partner_id' => 3,
                 'partner_name' => 'Aeroflot'
             ], 'meta' => [
-                ''
+
             ]
         ]);
     }
