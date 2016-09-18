@@ -1,0 +1,1 @@
+<a href="{{ $link or '#' }}" data-toggle="tooltip" title="{{ $title or 'Редактировать' }}" class="pull-right text-complete m-l-5"><i class="fa fa-pencil fa-fw"></i></a>

@@ -1,0 +1,18 @@
+{
+  "private": true,
+  "scripts": {
+    "prod": "gulp --production",
+    "dev": "gulp watch"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "jquery": "^3.1.0",
+    "laravel-elixir": "^6.0.0-9",
+    "laravel-elixir-webpack-official": "^1.0.2",
+    "lodash": "^4.14.0",
+    "laravel-elixir-sass-compass": "^0.4.0",
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.6.3",
+    "jquery-countdown": "^2.2.0"
+  }
+}

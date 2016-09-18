@@ -1,0 +1,71 @@
+// --------------------------------------------
+// Хелперы
+
+.c-help {
+    cursor: help !important;
+}
+
+.c-pointer {
+    cursor: pointer !important;
+}
+
+.v-a-m {
+    vertical-align: middle !important;
+}
+
+.t-a-l {
+    text-align: left !important;
+}
+
+.t-a-r {
+    text-align: right !important;
+}
+
+.hint-text {
+    opacity: .7;
+}
+
+.light {
+    font-weight: 300 !important;
+}
+
+.l-s-n {
+    list-style: none !important;
+}
+
+$i: 0;
+@while $i < 80 {
+    .m-l-#{$i} {
+        margin-left: #{$i}px !important;
+    }
+    .m-t-#{$i} {
+        margin-top: #{$i}px !important;
+    }
+    .m-r-#{$i} {
+        margin-right: #{$i}px !important;
+    }
+    .m-b-#{$i} {
+        margin-bottom: #{$i}px !important;
+    }
+    .p-l-#{$i} {
+        padding-left: #{$i}px !important;
+    }
+    .p-t-#{$i} {
+        padding-top: #{$i}px !important;
+    }
+    .p-r-#{$i} {
+        padding-right: #{$i}px !important;
+    }
+    .p-b-#{$i} {
+        padding-bottom: #{$i}px !important;
+    }
+    $i: $i + 5;
+}
+
+$i: 8;
+@while $i < 60 {
+    .fs-#{$i} {
+        font-size: #{$i}px !important;
+    }
+    $i: $i + 1;
+}

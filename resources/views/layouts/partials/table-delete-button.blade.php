@@ -1,0 +1,2 @@
+<button data-link="{{ $link or '#' }}" class="btn btn-{{ $buttonColor or 'danger' }} btn-sm inline m-b-5 m-r-5" data-toggle="modal" data-target="#modalConfirm">{!! $name or 'Удалить' !!}</button>
+{{--<i class="fa {{ $iconClass or 'fa-times' }} fa-fw"></i>--}}

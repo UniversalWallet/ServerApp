@@ -1,0 +1,1 @@
+<a data-link="{{ $link or '#' }}" title="{{ $title or 'Удалить' }}" class="pull-right text-danger m-l-5" href="#" data-toggle="modal" data-target="#modalConfirm"><i title="{{ $title or 'Удалить' }}" data-toggle="tooltip" class="fa fa-times fa-fw"></i></a>

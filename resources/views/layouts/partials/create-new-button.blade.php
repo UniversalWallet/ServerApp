@@ -1,0 +1,1 @@
+<a href="{{ $link or '#' }}" class="btn btn-success pull-right">{!! $name or 'Добавить' !!}</a>
