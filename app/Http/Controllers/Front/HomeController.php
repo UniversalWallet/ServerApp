@@ -98,6 +98,7 @@ class HomeController extends BaseController
     }
 
     public function toVerify(Request $request) {
+        
         $address = $request->input('address');
 
         $tickets = $request->has('address') ? Ticket::where('address','=', $request->input('address'))->where('verified',0)->get() : Ticket::where('verified',0)->get();
