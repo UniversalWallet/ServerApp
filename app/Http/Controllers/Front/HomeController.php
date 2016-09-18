@@ -59,7 +59,7 @@ class HomeController extends BaseController
         $ticket->fill(array_merge($data,$partners[$data['partner_id']]));
         $ticket->save();
 
-        $command = escapeshellcmd('save.py');
+        $command = escapeshellcmd('save.py --price='.$ticket->price.' --name='.$ticket->name);
         $output = shell_exec($command);
 
         return $this->success('Билет успешно добавлен');
